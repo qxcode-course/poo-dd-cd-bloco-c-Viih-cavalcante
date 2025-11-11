@@ -1,30 +1,21 @@
-class Pessoa:
-    def __init__(self, nome : str):
-        self._nome = nome
+espera: list[str] = []
 
-    def __str__(self) -> str:
-        return self._nome
-    
-    def enter(self, pessoa: str):
-        self.espera.append(pessoa)
+espera.append("joao")
+espera.append("bruxa")
+espera.append("bruxa")
 
-    def call(self, index: int):
-        if self.caixas[index] is not None:
-            print("caixa ocupado")
-            return
-        if index < 0 or index >= len(self.caixas):
-            print("indice inexistente")
-            return
-        if len(self.espera) == 0:
-            print("ninguem esperando")
-            return
-        self.caixas[index] = self.espera[0]
-        del self.espera[0]
-    def finish 
+del espera [1]
 
-class Budega:
-    def __init__(self, num_caixas: int):
-        self.caixas: list[Pessoa | None] = []
-        for _ in range(num_caixas):
-            self.caixas.append(None)
-        self.espera: list[Pessoa | None] = []
+espera = ["maria"] + espera
+del espera [0]
+
+espera.append("lobo")
+espera.append("caçador")
+
+del espera [2]
+
+espera.insert(2,"lobo")
+
+espera_texto = "-".join(espera)
+
+print(espera_texto)

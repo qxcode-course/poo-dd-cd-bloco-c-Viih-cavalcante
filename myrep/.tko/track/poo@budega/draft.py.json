@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-10_15-48-16",
+            "content": "@@ -621,15 +621,9 @@\n nish\n-(self,)\n+ \n %0A%0Acl\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-11_16-23-53",
+            "content": "@@ -1,295 +1,852 @@\n-espera: list%5Bstr%5D = %5B%5D%0A%0Aespera.append(%22joao%22)%0Aespera.append(%22bruxa%22)%0Aespera.append(%22bruxa%22)%0A%0Adel espera %5B1%5D%0A%0Aespera = %5B%22maria%22%5D + espera%0Adel espera %5B0%5D%0A%0Aespera.append(%22lobo%22)%0Aespera.append(%22ca%C3%A7ador%22)%0A%0Adel espera %5B2%5D%0A%0Aespera.insert(2,%22lobo%22)%0A%0Aespera_texto = %22-%22.join(espera)%0A%0Aprint(espera_texto)%0A\n+class Pessoa:%0A    def __init__(self, nome : str):%0A        self._nome = nome%0A%0A    def __str__(self) -%3E str:%0A        return self._nome%0A    %0A    def enter(self, pessoa: str):%0A        self.espera.append(pessoa)%0A%0A    def call(self, index: int):%0A        if self.caixas%5Bindex%5D is not None:%0A            print(%22caixa ocupado%22)%0A            return%0A        if index %3C 0 or index %3E= len(self.caixas):%0A            print(%22indice inexistente%22)%0A            return%0A        if len(self.espera) == 0:%0A            print(%22ninguem esperando%22)%0A            return%0A        self.caixas%5Bindex%5D = self.espera%5B0%5D%0A        del self.espera%5B0%5D%0A    def finish(self,)%0A%0Aclass Budega:%0A    def __init__(self, num_caixas: int):%0A        self.caixas: list%5BPessoa %7C None%5D = %5B%5D%0A        for _ in range(num_caixas):%0A            self.caixas.append(None)%0A        self.espera: list%5BPessoa %7C None%5D = %5B%5D\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-11_17-01-53",
+            "content": "espera: list[str] = []\n\nespera.append(\"joao\")\nespera.append(\"bruxa\")\nespera.append(\"bruxa\")\n\ndel espera [1]\n\nespera = [\"maria\"] + espera\ndel espera [0]\n\nespera.append(\"lobo\")\nespera.append(\"ca\u00e7ador\")\n\ndel espera [2]\n\nespera.insert(2,\"lobo\")\n\nespera_texto = \"-\".join(espera)\n\nprint(espera_texto)\n",
+            "lines": "21"
+        }
+    ]
+}

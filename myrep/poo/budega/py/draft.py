@@ -41,3 +41,4 @@ class budega:
 
         budega = Budega(3)
         print(budega)
+        teste

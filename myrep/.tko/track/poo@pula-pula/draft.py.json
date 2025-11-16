@@ -2,8 +2,48 @@
     "patches": [
         {
             "label": "2025-11-15_18-14-38",
-            "content": "",
+            "content": "@@ -1,130 +0,0 @@\n-class crian%C3%A7a:%0A    def __init__(self, nome : str):%0A        self.nome = nome%0A    def __str__(self):%0A        print(self.nome)%0Aclasse\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-16_02-08-21",
+            "content": "@@ -126,59 +126,5 @@\n lass\n- pulaPula:%0A    def __init__(self, fila : int):%0A        \n+e\n",
+            "lines": "6"
+        },
+        {
+            "label": "2025-11-16_02-15-04",
+            "content": "@@ -45,20 +45,8 @@\n  str\n-, idade :int\n ):%0A \n@@ -73,35 +73,8 @@\n ome%0A\n-        self.idade = idade%0A\n     \n@@ -119,20 +119,8 @@\n nome\n-, self.idade\n )%0Acl\n@@ -169,8 +169,16 @@\n : int):%0A\n+        \n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-16_02-22-19",
+            "content": "@@ -41,16 +41,28 @@\n me : str\n+, idade :int\n ):%0A     \n@@ -81,16 +81,43 @@\n  = nome%0A\n+        self.idade = idade%0A\n     def \n@@ -143,15 +143,14 @@\n     \n-return \n+print(\n self\n@@ -154,17 +154,29 @@\n elf.nome\n-%0A\n+, self.idade)\n %0Aclass p\n@@ -224,30 +224,4 @@\n t):%0A\n-        self.capacidade =%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-16_16-58-57",
+            "content": "@@ -199,16 +199,5 @@\n de =\n- capacidade\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-16_16-59-41",
+            "content": "@@ -1,15 +1,15 @@\n class \n-C\n+c\n rian%C3%A7a:%0A\n@@ -157,26 +157,20 @@\n _(self, \n-capacidade\n+fila\n  : int):\n@@ -211,326 +211,4 @@\n ade%0A\n-        self.dentro: list%5BCrian%C3%A7a%5D = %5B%5D%0A    def entrar(self, crian%C3%A7a: Crianca):%0A        if len(self.dentro) %3C self.capacidade:%0A            self.dentro.append(crianca)%0A            return True%0A        return False%0A    def sair_primeiro(self):%0A        if self.dentro:%0A            return self.dentro.pop(0)%0A        return None\n",
+            "lines": "9"
+        },
+        {
+            "label": "2025-11-16_17-06-10",
+            "content": "@@ -280,33 +280,33 @@\n , crian%C3%A7a: Crian\n-%C3%A7\n+c\n a):%0A        if l\n@@ -368,33 +368,33 @@\n tro.append(crian\n-%C3%A7\n+c\n a)%0A            r\n@@ -508,32 +508,32 @@\n f.dentro.pop(0)%0A\n+\n         return N\n@@ -539,581 +539,4 @@\n None\n-%0A    class GestorPulaPula:%0A        def __init__(self, capacidade):%0A            self.fila: list%5BCrian%C3%A7a%5D = %5B%5D%0A            self.pulapula = PulaPula(capacidade_pulapula)%0A        def adcionar_na_fila(self, crian%C3%A7a: Crian%C3%A7a):%0A            self.fila.append(crian%C3%A7a)%0A        def mover_fila_para_pulapula(self):%0A            if self.fila:%0A                primeira = self.fila.pop(0)%0A                if self.pulapula.entrar(primeira):%0A                    return True%0A                else:%0A                 self.fila.insert(0,primeira)%0A                return False%0A            return False\n",
+            "lines": "19"
+        },
+        {
+            "label": "2025-11-16_17-20-17",
+            "content": "@@ -45,20 +45,8 @@\n  str\n-, tempo: int\n ):%0A \n@@ -73,36 +73,8 @@\n ome%0A\n-        self.twmpo = tempo%0A%0A\n     \n@@ -124,17 +124,17 @@\n %0A%0Aclass \n-P\n+p\n ulaPula:\n@@ -253,17 +253,16 @@\n a%5D = %5B%5D%0A\n-%0A\n     def \n@@ -425,21 +425,16 @@\n n False%0A\n-    %0A\n     def \n@@ -540,13 +540,8 @@\n one%0A\n-    %0A\n     \n@@ -603,22 +603,8 @@\n dade\n-_pulapula: int\n ):%0A \n@@ -702,17 +702,16 @@\n lapula)%0A\n-%0A\n         \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-16_18-00-30",
+            "content": "class Crian\u00e7a:\n    def __init__(self, nome : str, tempo: int):\n        self.nome = nome\n        self.twmpo = tempo\n\n    def __str__(self):\n        return self.nome\n\nclass PulaPula:\n    def __init__(self, capacidade : int):\n        self.capacidade = capacidade\n        self.dentro: list[Crian\u00e7a] = []\n\n    def entrar(self, crian\u00e7a: Crian\u00e7a):\n        if len(self.dentro) < self.capacidade:\n            self.dentro.append(crian\u00e7a)\n            return True\n        return False\n    \n    def sair_primeiro(self):\n        if self.dentro:\n            return self.dentro.pop(0)\n        return None\n    \n    class GestorPulaPula:\n        def __init__(self, capacidade_pulapula: int):\n            self.fila: list[Crian\u00e7a] = []\n            self.pulapula = PulaPula(capacidade_pulapula)\n\n        def adcionar_na_fila(self, crian\u00e7a: Crian\u00e7a):\n            self.fila.append(crian\u00e7a)\n        def mover_fila_para_pulapula(self):\n            if self.fila:\n                primeira = self.fila.pop(0)\n                if self.pulapula.entrar(primeira):\n                    return True\n                else:\n                 self.fila.insert(0,primeira)\n                return False\n            return False",
+            "lines": "40"
         }
     ]
 }

@@ -187,8 +187,63 @@
         },
         {
             "label": "2025-11-16_16-43-51",
-            "content": "class Pessoa:\n    def __init__(self, nome: str):\n        self._nome = nome\n\n    def getNome(self):\n        return self._nome\n\n    def __str__(self):\n        return self._nome\n\nclass Market:\n    def __init__(self, num_caixas: int):\n        self.caixas: list[Pessoa | None] = [None] * num_caixas\n        self.espera: list[Pessoa] = []\n\n    def __str__(self):\n        caixas = \", \".join([str(x) if x is not None else \"-----\" for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera])\n        return f\"Caixas: [{caixas}]\\nEspera: [{espera}]\"\n\n    def arrive(self, pessoa: Pessoa):\n        self.espera.append(pessoa)\n\n    def call(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n        if not self.espera:\n            print(\"fail: sem clientes\")\n            return\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n        self.caixas[index] = self.espera.pop(0)\n\n    def finish(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n        if self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return\n        self.caixas[index] = None\n\nmarket = None\n\nwhile True:\n    try:\n        line = input().strip()\n    except EOFError:\n        break\n\n    if not line:\n        continue\n\n    print(\"$\" + line)\n\n    parts = line.split()\n    cmd = parts[0]\n\n    if cmd == \"$end\":\n        break\n\n    if cmd == \"$init\":\n        qtd = int(parts[1])\n        market = Market(qtd)\n\n    elif cmd == \"$show\":\n        print(market)\n\n    elif cmd == \"$arrive\":\n        nome = parts[1]\n        market.arrive(Pessoa(nome))\n\n    elif cmd == \"$call\":\n        market.call(int(parts[1]))\n\n    elif cmd == \"$finish\":\n        market.finish(int(parts[1]))\n",
+            "content": "@@ -51,24 +51,25 @@\n        self.\n+_\n nome = nome%0A\n@@ -69,16 +69,66 @@\n = nome%0A%0A\n+    def getNome(self):%0A        return self._nome%0A%0A\n     def \n@@ -162,16 +162,17 @@\n rn self.\n+_\n nome%0A%0Acl\n@@ -179,14 +179,14 @@\n ass \n-Budega\n+Market\n :%0A  \n@@ -272,80 +272,26 @@\n  = %5B\n-%5D%0A        for _ in range(num_caixas):%0A          self.caixas.append(None)\n+None%5D * num_caixas\n %0A   \n@@ -1565,25 +1565,8 @@\n t%22:%0A\n-        try:%0A    \n     \n@@ -1589,20 +1589,16 @@\n rts%5B1%5D)%0A\n-    \n         \n@@ -1621,96 +1621,8 @@\n qtd)\n-%0A        except (IndexError,ValueError):%0A            print(fail: inicializa%C3%A7ao invalida)\n %0A%0A  \n",
             "lines": "79"
+        },
+        {
+            "label": "2025-11-19_00-07-39",
+            "content": "@@ -341,13 +341,241 @@\n def \n-enter\n+__str__(self):%0A        caixas = %22, %22.join(%5Bstr(x) if x is not None else %22-----%22 for x in self.caixas%5D)%0A        espera = %22, %22.join(%5Bstr(x) for x in self.espera%5D)%0A        return f%22Caixas: %5B%7Bcaixas%7D%5D%5CnEspera: %5B%7Bespera%7D%5D%22%0A%0A    def arrive\n (sel\n@@ -792,13 +792,12 @@\n  if \n-len (\n+not \n self\n@@ -807,14 +807,8 @@\n pera\n-) == 0\n :%0A  \n@@ -1011,38 +1011,15 @@\n pera\n-%5B0%5D%0A        del self.espera%5B0%5D\n+.pop(0)\n %0A%0A  \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-19_00-56-23",
+            "content": "@@ -858,39 +858,8 @@\n :%0A  \n-    self.caixas%5Bindex%5D = None %0A\n     \n@@ -895,32 +895,32 @@\n n(self.caixas):%0A\n+\n             prin\n@@ -963,24 +963,26 @@\n      return%0A\n+  \n       if sel\n@@ -1002,24 +1002,24 @@\n x%5D is None:%0A\n-\n             \n@@ -1068,22 +1068,16 @@\n urn%0A\n-    %0A%0A\n         \n %0A%0Ama\n@@ -1072,16 +1072,41 @@\n         \n+self.caixas%5Bindex%5D = None\n %0A%0Amarket\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-19_01-00-54",
+            "content": "@@ -1507,25 +1507,24 @@\n       print(\n-%22\n fail: inicia\n@@ -1539,17 +1539,16 @@\n invalida\n-%22\n )%0A%0A    e\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-19_01-01-24",
+            "content": "@@ -1315,24 +1315,55 @@\n rts%5B0%5D%0A%0A    \n+if cmd == %22$end%22:%0A        break\n %0A%0A    if cmd\n@@ -1436,23 +1436,23 @@\n     \n-budega = Budega\n+market = Market\n (qtd\n@@ -1809,39 +1809,4 @@\n %5D))%0A\n-    if cmd == %22$end%22:%0A        break\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-19_01-02-30",
+            "content": "@@ -1102,270 +1102,266 @@\n    %0A\n-    def give_Up(self, nome: str):%0A        aux = self.espera%0A        for 0, pessoa in enumerate(self.espera):%0A            if pessoa.nome == nome:%0A                aux = self.espera %0A                del self.espera\n+%0A        %0A%0Amarket = None%0A%0Awhile True:%0A    try:%0A        line = input().strip()%0A    except EOFError:%0A        break%0A%0A    if not line:%0A        continue%0A%0A    print(%22$%22 + line)%0A%0A    parts = line.split()%0A    cmd = parts\n %5B0%5D%0A\n+%0A\n     \n+%0A%0A\n     \n-        break%0A        self.espera = aux\n+if cmd == %22$init%22:%0A        try:\n %0A   \n@@ -1369,308 +1369,180 @@\n     \n-%0A\n     \n-def __str__(self):%0A        caixas = %22, %22.join(%5B%22-----%22 if x is None else str (x) for x in self.caixas%5D)%0A        espera = %22, %22.join(%5Bstr(x) for x in self.espera%5D)%0A        return f%22Caixas: %5B%7Bcaixas%7D%5D%5CnEspera: %5B%7Bespera%7D%5D%22%0A%0Adef main():%0A%0A    budega = Budega(0)%0A%0A    while True:%0A        line = input()\n+qtd = int(parts%5B1%5D)%0A            budega = Budega(qtd)%0A        except (IndexError,ValueError):%0A            print(%22fail: inicializa%C3%A7ao invalida%22)%0A%0A    elif cmd == %22$show%22:\n %0A   \n@@ -1556,305 +1556,261 @@\n int(\n-%22$%22 + line\n+market\n )%0A\n+%0A\n     \n-    args = line.split()\n+elif cmd == %22$arrive%22:\n %0A    \n-%0A\n     \n-    if args %5B0%5D == %22end%22:%0A            break%0A        elif args %5B0%5D == %22init%22:%0A            budega = Budega\n+nome = parts%5B1%5D%0A        market.arrive(Pessoa(nome))%0A%0A    elif cmd == %22$call%22:%0A        market.call\n (int(\n+p\n ar\n-g\n+t\n s%5B1%5D))%0A\n-  \n+%0A\n     \n-  \n elif \n-args %5B0%5D == %22show%22:%0A            print(budega) = budega%0A        elif args %5B0%5D == %22arrive%22:%0A            self_%0A            \n+cmd == %22$finish%22:%0A        market.finish(int(parts%5B1%5D))%0A    if cmd == %22$end%22:%0A        break\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-19_02-01-19",
+            "content": "@@ -1971,303 +1971,13 @@\n     \n-nome_cliente = args%5B1%5D%0A            budega.enter(Pessoa(nome_cliente))%0A        elif args%5B0%5D == %22call%22 :%0A            budega(call(args%5B1%5D))%0A        elif args %5B0%5D == %22finish%22:%0A            budega.finish(int(args%5B1%5D))%0A        elif args%5B0%5D == %22give up%22:%0A            budega.give_Up(int(args%5B1%5D))%0Amain ()\n+self_\n %0A   \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-11-19_02-08-32",
+            "content": "@@ -2092,18 +2092,14 @@\n dega\n-.\n+(\n call(\n-int(\n args\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-19_02-09-30",
+            "content": "@@ -1170,17 +1170,17 @@\n     for \n-x\n+0\n , pessoa\n@@ -1310,17 +1310,17 @@\n .espera%5B\n-x\n+0\n %5D%0A      \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-19_02-10-12",
+            "content": "@@ -1910,16 +1910,25 @@\n (budega)\n+ = budega\n %0A       \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-19_02-10-49",
+            "content": "@@ -854,24 +854,50 @@\n int):%0A      \n+self.caixas%5Bindex%5D = None \n %0A      if in\n@@ -1101,43 +1101,8 @@\n     \n-  self.caixas%5Bindex%5D = None %0A      \n %0A   \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-19_02-16-53",
+            "content": "class Pessoa:\n    def __init__(self, nome: str):\n        self.nome = nome\n\n    def __str__(self):\n        return self.nome\n\nclass Budega:\n    def __init__(self, num_caixas: int):\n        self.caixas: list[Pessoa | None] = []\n        for _ in range(num_caixas):\n          self.caixas.append(None)\n        self.espera: list[Pessoa] = []\n\n    def enter(self, pessoa: Pessoa):\n        self.espera.append(pessoa)\n\n    def call(self, index: int):\n        if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n        if len (self.espera) == 0:\n            print(\"fail: sem clientes\")\n            return\n        if self.caixas[index] is not None:\n            print(\"fail: caixa ocupado\")\n            return\n        self.caixas[index] = self.espera[0]\n        del self.espera[0]\n\n    def finish(self, index: int):\n      \n      if index < 0 or index >= len(self.caixas):\n            print(\"fail: caixa inexistente\")\n            return\n      if self.caixas[index] is None:\n            print(\"fail: caixa vazio\")\n            return\n      self.caixas[index] = None \n      \n    def give_Up(self, nome: str):\n        aux = self.espera\n        for x, pessoa in enumerate(self.espera):\n            if pessoa.nome == nome:\n                aux = self.espera \n                del self.espera[x]\n                break\n        self.espera = aux\n        \n    def __str__(self):\n        caixas = \", \".join([\"-----\" if x is None else str (x) for x in self.caixas])\n        espera = \", \".join([str(x) for x in self.espera])\n        return f\"Caixas: [{caixas}]\\nEspera: [{espera}]\"\n\ndef main():\n\n    budega = Budega(0)\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split()\n    \n        if args [0] == \"end\":\n            break\n        elif args [0] == \"init\":\n            budega = Budega(int(args[1]))\n        elif args [0] == \"show\":\n            print(budega)\n        elif args [0] == \"arrive\":\n            nome_cliente = args[1]\n            budega.enter(Pessoa(nome_cliente))\n        elif args[0] == \"call\" :\n            budega.call(int(args[1]))\n        elif args [0] == \"finish\":\n            budega.finish(int(args[1]))\n        elif args[0] == \"give up\":\n            budega.give_Up(int(args[1]))\nmain ()\n            ",
+            "lines": "80"
         }
     ]
 }

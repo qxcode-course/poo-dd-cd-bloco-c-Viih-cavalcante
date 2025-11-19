@@ -2,81 +2,79 @@ class Pessoa:
     def __init__(self, nome: str):
         self.nome = nome
 
-    def getNome(self):
-        return self._nome
-
     def __str__(self):
-        return self._nome
+        return self.nome
 
-class Market:
+class Budega:
     def __init__(self, num_caixas: int):
-        self.caixas: list[Pessoa | None] = [None] * num_caixas
+        self.caixas: list[Pessoa | None] = []
+        for _ in range(num_caixas):
+          self.caixas.append(None)
         self.espera: list[Pessoa] = []
 
-    def __str__(self):
-        caixas = ", ".join([str(x) if x is not None else "-----" for x in self.caixas])
-        espera = ", ".join([str(x) for x in self.espera])
-        return f"Caixas: [{caixas}]\nEspera: [{espera}]"
-
-    def arrive(self, pessoa: Pessoa):
+    def enter(self, pessoa: Pessoa):
         self.espera.append(pessoa)
 
     def call(self, index: int):
         if index < 0 or index >= len(self.caixas):
             print("fail: caixa inexistente")
             return
-        if not self.espera:
+        if len (self.espera) == 0:
             print("fail: sem clientes")
             return
         if self.caixas[index] is not None:
             print("fail: caixa ocupado")
             return
-        self.caixas[index] = self.espera.pop(0)
+        self.caixas[index] = self.espera[0]
+        del self.espera[0]
 
     def finish(self, index: int):
-        if index < 0 or index >= len(self.caixas):
+      
+      if index < 0 or index >= len(self.caixas):
             print("fail: caixa inexistente")
             return
-        if self.caixas[index] is None:
+      if self.caixas[index] is None:
             print("fail: caixa vazio")
             return
-        self.caixas[index] = None
+      self.caixas[index] = None 
+      
+    def give_Up(self, nome: str):
+        aux = self.espera
+        for x, pessoa in enumerate(self.espera):
+            if pessoa.nome == nome:
+                aux = self.espera 
+                del self.espera[x]
+                break
+        self.espera = aux
+        
+    def __str__(self):
+        caixas = ", ".join(["-----" if x is None else str (x) for x in self.caixas])
+        espera = ", ".join([str(x) for x in self.espera])
+        return f"Caixas: [{caixas}]\nEspera: [{espera}]"
 
-market = None
+def main():
 
-while True:
-    try:
-        line = input().strip()
-    except EOFError:
-        break
+    budega = Budega(0)
 
-    if not line:
-        continue
-
-    print("$" + line)
-
-    parts = line.split()
-    cmd = parts[0]
-
-    if cmd == "$end":
-        break
-
-    if cmd == "$init":
-        try:
-            qtd = int(parts[1])
-            market = Market(qtd)
-        except (IndexError,ValueError):
-            print(fail: inicializaçao invalida
-
-    elif cmd == "$show":
-        print(market)
-
-    elif cmd == "$arrive":
-        nome = parts[1]
-        market.arrive(Pessoa(nome))
-
-    elif cmd == "$call":
-        market.call(int(parts[1]))
-
-    elif cmd == "$finish":
-        market.finish(int(parts[1]))
+    while True:
+        line = input()
+        print("$" + line)
+        args = line.split()
+    
+        if args [0] == "end":
+            break
+        elif args [0] == "init":
+            budega = Budega(int(args[1]))
+        elif args [0] == "show":
+            print(budega)
+        elif args [0] == "arrive":
+            nome_cliente = args[1]
+            budega.enter(Pessoa(nome_cliente))
+        elif args[0] == "call" :
+            budega.call(int(args[1]))
+        elif args [0] == "finish":
+            budega.finish(int(args[1]))
+        elif args[0] == "give up":
+            budega.give_Up(int(args[1]))
+main ()
+            

@@ -12,13 +12,15 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\vivi5\OneDrive\Documentos\poo_cd\poo-dd-cd-bloco-c-Viih-cavalcante\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-16 17:40:25'
+  cache_timestamp: '2025-11-18 23:24:05'
   filters:
   - listas
 expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
-tasks: {}
+tasks:
+  poo@budega: '{rate:100, human:sena_com_a_video_aula_assisti_fiz_e_refiz_um_monte_de_vezes_sempre_q_testava_nao_dava_certo_nada_mas_depois_fiz_uma_revisao_de_todo_o_conteudo_e_consegui_desenrolar,
+    guide:sim_aula_do_sena, alone:10, study:450}'
 flags:
   quests: 0
   tracks: 0
@@ -26,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@campanha-principal
+selected: poo@lapiseira

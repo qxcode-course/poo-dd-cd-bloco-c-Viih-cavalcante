@@ -2,8 +2,13 @@
     "patches": [
         {
             "label": "2025-11-11_17-05-06",
-            "content": "",
+            "content": "@@ -1,1012 +0,0 @@\n-class Foo:%0A    def __init__(self, x: int):%0A        self.x = x%0A    def __str__(self):%0A        return f%22FFoo(%7Bself.x%7D)%22%0A    %0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list %5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D= %5BFoo(1), Foo(2), Foo(3), Foo(4), Foo(5)%5D%0A%0Alista_vazia.append(10)%0Alista_preenchida.append(6)%0Aultimo = lista_preenchida.pop()%0Alista_preenchida.insert(0,99)%0Aprimeiro = lista_preenchida.pop(0)%0Alista_preenchida.insert(2, 777)%0Aremovido = lista_preenchida.pop(2)%0Apalavras = %5B%22ola%22, %22mundo%22, %22python%22%5D%0Atexto_formatado = %22 %7C %22.join(palavras)%0An = 5%0Asequencia = list(range(n + 1))%0Aimport random%0Aaleatorios = %5Brandom.randint(1, 10) for _ in range(5)%5D%0Aprimeiro_elemento = lista_preenchida%5B0%5D if len(lista_preenchida) %3E 0 else None%0Afor valor in lista_preenchida:%0A    pass%0Afor i in range(len(lista_prenchida)):%0A    temp = lista_preenchida%5Bi%5D%0A    x = 3%0A    achou = False%0A    for v in lista_preenchida:%0A        if v == x:%0A            achou= True%0A            break%0Aexiste = x in lista_preenchida\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-19_03-11-54",
+            "content": "class Foo:\n    def __init__(self, x: int):\n        self.x = x\n    def __str__(self):\n        return f\"FFoo({self.x})\"\n    \nlista_vazia: list[int] = []\nlista_preenchida: list [int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo]= [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(10)\nlista_preenchida.append(6)\nultimo = lista_preenchida.pop()\nlista_preenchida.insert(0,99)\nprimeiro = lista_preenchida.pop(0)\nlista_preenchida.insert(2, 777)\nremovido = lista_preenchida.pop(2)\npalavras = [\"ola\", \"mundo\", \"python\"]\ntexto_formatado = \" | \".join(palavras)\nn = 5\nsequencia = list(range(n + 1))\nimport random\naleatorios = [random.randint(1, 10) for _ in range(5)]\nprimeiro_elemento = lista_preenchida[0] if len(lista_preenchida) > 0 else None\nfor valor in lista_preenchida:\n    pass\nfor i in range(len(lista_prenchida)):\n    temp = lista_preenchida[i]\n    x = 3\n    achou = False\n    for v in lista_preenchida:\n        if v == x:\n            achou= True\n            break\nexiste = x in lista_preenchida",
+            "lines": "35"
         }
     ]
 }

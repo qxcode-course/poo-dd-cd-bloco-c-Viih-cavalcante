@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\vivi5\OneDrive\Documentos\poo_cd\poo-dd-cd-bloco-c-Viih-cavalcante\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-18 23:24:05'
+  cache_timestamp: '2025-11-19 02:27:57'
   filters:
   - listas
 expanded:
@@ -28,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@array

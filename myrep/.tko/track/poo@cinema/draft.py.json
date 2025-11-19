@@ -12,8 +12,178 @@
         },
         {
             "label": "2025-11-19_02-01-13",
-            "content": "class Cliente:\n    def __init__(self, nome :str, phone : int):\n        self.nome = str\n        self.phone = int\n\n    def getId(self):\n        return self.id\n    \n    def getPhone(self):\n        return self.phone\nclass cinema:\n   ",
-            "lines": "12"
+            "content": "@@ -1,233 +1,255 @@\n-class Cliente:%0A    def __init__(self, id :str, phone : int):%0A        self.id = str%0A        self.phone = int%0A%0A    def\n+@@ -31,18 +31,20 @@%0A _(self, %0A-id%0A+nome%0A  :str, p%0A@@ -69,18 +69,20 @@%0A    self.%0A-id%0A+nome%0A  = str%250A %0A@@ -121,25 +121,16 @@%0A \n  get\n+%0A-\n Nome\n-(self) -%3E\n+%0A+Id%0A (self)%0A- -%253E\n  str\n-:\n %0A \n-       return self.id%0A    %0A    def getPhone(self) -%3E\n+:%250A  %0A@@ -181,15 +181,8 @@%0A elf)%0A- -%253E\n  int\n-:\n %0A \n-       return self.phone%0A\n+:%250A  %0A@@ -209,222 +209,8 @@%0A one%250A%0A-\n     \n-%0A\n+%250A\n     \n@@ -270,33 +270,35 @@\n , novo_id: str):\n-%0A\n+%250A\n         self.id \n@@ -306,18 +306,22 @@\n  novo_id\n-%0A%0A\n+%250A%250A\n     def \n@@ -348,25 +348,27 @@\n phone: int):\n-%0A\n+%250A\n         self\n@@ -386,18 +386,22 @@\n vo_phone\n-%0A%0A\n+%250A%250A\n     def \n@@ -419,2015 +419,83 @@\n f) -\n-%3E str:%0A        return f%22%7Bself.id%7D:%7Bself.phone%7D%22%0A%0Aclass SalaCinema:%0A    def __init__(self, capacidade :int):%0A        self.cadeiras: list%5BCliente %7C None%5D = %5B%5D%0A        for _ in range (capacidade):%0A            self.cadeiras.append(None)%0A%0A    def procurar_cliente(self, id : str):%0A        for i, cliente in enumerate(self.cadeiras):%0A            if cliente is not None and cliente.id == id:%0A                return i%0A        return -1%0A    %0A    def verificar_indice(self, index: int) -%3E bool:%0A        return 0 %3C= index %3C len(self.cadeiras)%0A    %0A    def reservar(self, id: str, phone: int, index :int):%0A        if not self.verificar_indice(index):%0A            print(%22Fail: cadeira inexistente%22)%0A            return%0A        %0A        if self.cadeiras%5Bindex%5D is not None:%0A            print(%22Fail: cadeira ocupada%22)%0A            return%0A        %0A        if self.procurar_cliente(id) != -1:%0A            print(%22Fail: cliente ja est%C3%A1 na sala%22)%0A%0A        self.cadeiras%5Bindex%5D = Cliente(id, phone)%0A%0A    def cancelar(self, id: str):%0A        posi%C3%A7ao = self.procurar_cliente(id)%0A        if posi%C3%A7ao == -1:%0A            print(%22Fail, cliente n%C3%A3o encontrado%22)%0A            return%0A        self.cadeira%5Bposi%C3%A7ao%5D = None%0A    %0A    def getCadeiras(self):%0A        return self.cadeiras%0A    %0A    def __str__(self):%0A        return %22%5B%22 + %22, %22.join(%22vazia%22 if c is None else str (c) for c in self.cadeiras) + %22%5D%22%0A    %0Adef main():%0A    sala = SalaCinema(0)%0A    while True:%0A        linha = input()%0A        print(%22$%22+ linha)%0A        args = linha.split()%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22init%22:%0A            sala = SalaCinema(int(args%5B1%5D))%0A        elif args%5B0%5D == %22show%22:%0A            print(sala)%0A        elif args%5B0%5D == %22reservar%22:%0A           id = args%5B1%5D%0A           phone = args%5B2%5D%0A           index = args%5B3%5D%0A           sala.reservar(id, phone, index)%0A        elif args%5B0%5D == %22cancelar%22:%0A            id = args %5B1%5D%0A            sala.cancelar(id)%0A        else:%0A            print(%22fail: comando invalido%22)%0Amain ()%0A        \n+%253E str:%250A        return f%2522%257Bself.id%257D:%257Bself.phone%257D%2522%250A%250A%250A%0A clas\n %0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-19_15-47-28",
+            "content": "@@ -1692,17 +1692,13 @@\n in(%22\n-- - - - -\n+vazia\n %22 if\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-48-10",
+            "content": "@@ -72,18 +72,19 @@\n lf.id = \n-id\n+str\n %0A       \n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-53-46",
+            "content": "@@ -72,19 +72,18 @@\n lf.id = \n-str\n+id\n %0A       \n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-54-19",
+            "content": "@@ -1678,17 +1678,17 @@\n  %22%5B%22 + %22\n-%5D\n+,\n  %22.join(\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-57-58",
+            "content": "@@ -1674,16 +1674,18 @@\n turn %22%5B%22\n+ +\n  %22%5D %22.jo\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-58-30",
+            "content": "@@ -1674,18 +1674,16 @@\n turn %22%5B%22\n- +\n  %22%5D %22.jo\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_15-58-45",
+            "content": "@@ -2155,17 +2155,15 @@\n e = \n-(\n args%5B2%5D\n-)\n %0A   \n@@ -2182,17 +2182,15 @@\n x = \n-(\n args%5B3%5D\n-)\n %0A   \n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_16-01-32",
+            "content": "@@ -1675,16 +1675,17 @@\n urn %22%5B%22 \n++\n  %22%5D %22.jo\n@@ -2155,15 +2155,17 @@\n e = \n+(\n args%5B2%5D\n+)\n %0A   \n@@ -2184,15 +2184,17 @@\n x = \n+(\n args%5B3%5D\n+)\n %0A   \n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_16-02-11",
+            "content": "@@ -1675,17 +1675,16 @@\n urn %22%5B%22 \n-+\n  %22%5D %22.jo\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_16-02-23",
+            "content": "@@ -1678,16 +1678,17 @@\n  %22%5B%22 + %22\n+%5D\n  %22.join(\n@@ -1755,16 +1755,21 @@\n ) + %22%5D%22%0A\n+    %0A\n def main\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-19_16-16-39",
+            "content": "@@ -1688,16 +1688,24 @@\n .join(%22-\n+ - - - -\n %22 if c i\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-17-41",
+            "content": "@@ -932,17 +932,18 @@\n f reserv\n-e\n+ar\n (self, i\n@@ -1086,16 +1086,24 @@\n  return%0A\n+        \n %0A       \n@@ -2089,17 +2089,18 @@\n  %22reserv\n-e\n+ar\n %22:%0A     \n@@ -2194,17 +2194,18 @@\n a.reserv\n-e\n+ar\n (id, pho\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-21-09",
+            "content": "@@ -1081,32 +1081,24 @@\n      return%0A\n-        \n %0A        if \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-21-39",
+            "content": "@@ -1549,17 +1549,16 @@\n .cadeira\n-s\n %5Bposi%C3%A7ao\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-22-46",
+            "content": "@@ -72,18 +72,19 @@\n lf.id = \n-id\n+str\n %0A       \n@@ -97,21 +97,19 @@\n phone = \n-phone\n+int\n %0A%0A    de\n@@ -2140,20 +2140,15 @@\n e = \n-int(\n args%5B2%5D\n-)\n %0A   \n@@ -2167,20 +2167,15 @@\n x = \n-int(\n args%5B3%5D\n-)\n %0A   \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-24-19",
+            "content": "@@ -1155,25 +1155,25 @@\n      print(%22\n-f\n+F\n ail: cadeira\n@@ -1173,19 +1173,16 @@\n cadeira \n-ja \n ocupada%22\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-24-46",
+            "content": "@@ -1180,13 +1180,8 @@\n  ja \n-esta \n ocup\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-25-37",
+            "content": "@@ -1278,25 +1278,25 @@\n      print(%22\n-f\n+F\n ail: cliente\n@@ -1309,15 +1309,13 @@\n t%C3%A1 n\n-o cinem\n+a sal\n a%22)%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-26-06",
+            "content": "@@ -1302,17 +1302,17 @@\n e ja est\n-a\n+%C3%A1\n  no cine\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-26-21",
+            "content": "@@ -1057,18 +1057,19 @@\n ira \n+i\n n\n-ao \n existe\n+nte\n %22)%0A \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-26-43",
+            "content": "@@ -1031,33 +1031,33 @@\n          print(%22\n-f\n+F\n ail: cadeira nao\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-26-59",
+            "content": "@@ -1891,56 +1891,8 @@\n it()\n-%0A        if len(args) == 0:%0A            continue\n %0A%0A  \n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-19_16-34-24",
+            "content": "@@ -2431,37 +2431,16 @@\n alido%22)%0A\n-            continue%0A\n main ()%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-19_16-34-55",
+            "content": "@@ -1833,32 +1833,49 @@\n input()%0A        \n+print(%22$%22+ linha)\n %0A        args = \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-19_16-39-26",
+            "content": "@@ -1845,26 +1845,8 @@\n     \n-print(%22$%22 + linha)\n %0A   \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-19_16-39-34",
+            "content": "@@ -1985,17 +1985,16 @@\n   break%0A\n-%0A\n         \n@@ -2061,17 +2061,16 @@\n gs%5B1%5D))%0A\n-%0A\n         \n@@ -2117,17 +2117,16 @@\n t(sala)%0A\n-%0A\n         \n@@ -2155,33 +2155,32 @@\n ve%22:%0A           \n- \n id = args%5B1%5D%0A   \n@@ -2168,33 +2168,32 @@\n    id = args%5B1%5D%0A\n- \n            phone\n@@ -2208,17 +2208,16 @@\n rgs%5B2%5D)%0A\n- \n         \n@@ -2247,25 +2247,24 @@\n %0A           \n- \n sala.reserve\n@@ -2286,118 +2286,8 @@\n ex)%0A\n-%0A        elif args%5B0%5D == %22cancel%22:     # %E2%86%90 ADICIONADO%0A            id = args%5B1%5D%0A            sala.cancelar(id)%0A%0A\n     \n@@ -2321,42 +2321,8 @@\n ar%22:\n-   # %E2%86%90 mant%C3%A9m o seu comando antigo\n %0A   \n@@ -2331,32 +2331,33 @@\n        id = args\n+ \n %5B1%5D%0A            \n@@ -2374,17 +2374,16 @@\n lar(id)%0A\n-%0A\n         \n@@ -2457,13 +2457,13 @@\n nue%0A\n-%0A\n main\n+ \n ()%0A \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-19_16-48-30",
+            "content": "@@ -1381,16 +1381,18 @@\n f cancel\n+ar\n (self, i\n@@ -2323,16 +2323,161 @@\n cancel%22:\n+     # %E2%86%90 ADICIONADO%0A            id = args%5B1%5D%0A            sala.cancelar(id)%0A%0A        elif args%5B0%5D == %22cancelar%22:   # %E2%86%90 mant%C3%A9m o seu comando antigo\n %0A       \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-49-20",
+            "content": "@@ -2382,100 +2382,8 @@\n d)%0A%0A\n-        elif args%5B0%5D == %22cancelar%22:%0A            id = args%5B1%5D%0A            sala.cancelar(id)%0A%0A\n     \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-11-19_16-49-40",
+            "content": "@@ -1381,18 +1381,16 @@\n f cancel\n-ar\n (self, i\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-50-13",
+            "content": "@@ -1493,17 +1493,17 @@\n nt(%22Fail\n-:\n+,\n  cliente\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-50-53",
+            "content": "@@ -1508,29 +1508,25 @@\n te n%C3%A3o e\n-sta no cinema\n+ncontrado\n %22)%0A     \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-51-24",
+            "content": "@@ -1481,33 +1481,33 @@\n          print(%22\n-f\n+F\n ail: cliente n%C3%A3o\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-51-38",
+            "content": "@@ -1504,17 +1504,17 @@\n liente n\n-a\n+%C3%A3\n o esta n\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_16-57-49",
+            "content": "class Cliente:\n    def __init__(self, id :str, phone : int):\n        self.id = id\n        self.phone = phone\n\n    def getNome(self) -> str:\n        return self.id\n    \n    def getPhone(self) -> int:\n        return self.phone\n    \n    def setId(self, novo_id: str):\n        self.id = novo_id\n\n    def setphone(self, novo_phone: int):\n        self.phone = novo_phone\n\n    def __str__(self) -> str:\n        return f\"{self.id}:{self.phone}\"\n\nclass SalaCinema:\n    def __init__(self, capacidade :int):\n        self.cadeiras: list[Cliente | None] = []\n        for _ in range (capacidade):\n            self.cadeiras.append(None)\n\n    def procurar_cliente(self, id : str):\n        for i, cliente in enumerate(self.cadeiras):\n            if cliente is not None and cliente.id == id:\n                return i\n        return -1\n    \n    def verificar_indice(self, index: int) -> bool:\n        return 0 <= index < len(self.cadeiras)\n    \n    def reserve(self, id: str, phone: int, index :int):\n        if not self.verificar_indice(index):\n            print(\"fail: cadeira nao existe\")\n            return\n        \n        if self.cadeiras[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return\n        \n        if self.procurar_cliente(id) != -1:\n            print(\"fail: cliente ja esta no cinema\")\n\n        self.cadeiras[index] = Cliente(id, phone)\n\n    def cancelar(self, id: str):\n        posi\u00e7ao = self.procurar_cliente(id)\n        if posi\u00e7ao == -1:\n            print(\"fail: cliente nao esta no cinema\")\n            return\n        self.cadeiras[posi\u00e7ao] = None\n    \n    def getCadeiras(self):\n        return self.cadeiras\n    \n    def __str__(self):\n        return \"[\" + \" \".join(\"-\" if c is None else str (c) for c in self.cadeiras) + \"]\"\ndef main():\n    sala = SalaCinema(0)\n    while True:\n        linha = input()\n        print(\"$\" + linha)\n        args = linha.split()\n        if len(args) == 0:\n            continue\n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"init\":\n            sala = SalaCinema(int(args[1]))\n\n        elif args[0] == \"show\":\n            print(sala)\n\n        elif args[0] == \"reserve\":\n            id = args[1]\n            phone = int(args[2])\n            index = int(args[3])\n            sala.reserve(id, phone, index)\n\n        elif args[0] == \"cancel\":\n            id = args[1]\n            sala.cancelar(id)\n\n        elif args[0] == \"cancelar\":\n            id = args[1]\n            sala.cancelar(id)\n\n        else:\n            print(\"fail: comando invalido\")\n            continue\n\nmain()\n        \n",
+            "lines": "99"
         }
     ]
 }

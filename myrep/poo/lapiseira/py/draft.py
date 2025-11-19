@@ -1,8 +1,8 @@
 class Lead:
     def __init__(self, thickness: float, hardness: str, size: int):
-        self.__thickness: float = thickness  #calibre
-        self.__hardness: str = hardness      #dureza
-        self.__size: int = size              #tamanho
+        self.__thickness: float = thickness
+        self.__hardness: str = hardness      
+        self.__size: int = size              
     def getThickness(self) -> float:
         return self.__thickness
     def getHardness(self) -> str:
@@ -25,8 +25,8 @@ class Lead:
         return f"[{self.__thickness}:{self.__hardness}:{self.__size}]"
 class Pencil:
     def __init__(self, thickness: float):
-        self.__tip: None = None              #grafite atual (começa sem grafite)
-        self.__thickness: float = thickness  #calibre
+        self.__tip: None = None              
+        self.__thickness: float = thickness  
     def getTip(self) -> Lead | None:
         return self.__tip
     def getThickness(self) -> float:
@@ -37,7 +37,7 @@ class Pencil:
         else:
             return False
     def insert(self, grafite: Lead) -> bool:
-        if self.hasGrafite(): #verifica se ja existe um grafite na lapiseira
+        if self.hasGrafite(): 
             print("fail: ja existe grafite")
             return False
         elif grafite.getThickness() != self.__thickness:

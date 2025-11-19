@@ -24,7 +24,7 @@ aleatorios = [random.randint(1, 10) for _ in range(5)]
 primeiro_elemento = lista_preenchida[0] if len(lista_preenchida) > 0 else None
 for valor in lista_preenchida:
     pass
-for i in range(len(lista_prenchida)):
+for i in range(len(lista_preenchida)):
     temp = lista_preenchida[i]
     x = 3
     achou = False
@@ -33,3 +33,46 @@ for i in range(len(lista_prenchida)):
             achou= True
             break
 existe = x in lista_preenchida
+pares = [v for v in lista_preenchida if v % 2 ==0]
+dobro = [v * 2 for v in lista_preenchida]
+
+def remover_primeira(lista, valor):
+    for i in range(len(lista)):
+        if lista[i] == valor:
+            lista.pop(i)
+            return True
+        return False
+def remover_todos(lista,valor):
+    i = 0
+    while i < len(lista):
+        if lista[i] == valor:
+            lista.pop(i)
+        else:
+            i += 1
+            funcoes_lista= dir(list)
+
+def main ():
+    if __name__ == "__name__":
+        print("lista vazia:", lista_vazia)
+        print("lista preenchida:", lista_preenchida)
+        print("lista com objetos:", lista_preenchida_objetos)
+        print("ultimo removido", ultimo)
+        print("primeiro removido", primeiro)
+        print("removido posiçao 2:", removido)
+        print("join:", texto_formatado)
+        print("sequencia:", sequencia)
+        print("aleatorios", aleatorios)
+        print("pares:", pares)
+        print("dobro", dobro)
+        print("3 existe na lista?", existe)        
+        teste = [1, 2, 3, 2, 4]
+        print("\nAntes remover primeira vez:", teste)
+        remover_primeira(teste,2)
+        print("Depois", teste)
+        teste2 = [2, 2, 2, 3]
+        print("\nAntes remover todos:", teste2)
+        remover_todos(teste2, 2)
+        print("depois:", teste2)
+        print("\nFunçoes nativas de list:")
+        print(funcoes_lista)
+main ()

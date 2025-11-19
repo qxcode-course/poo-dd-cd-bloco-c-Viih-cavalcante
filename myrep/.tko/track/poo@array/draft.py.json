@@ -7,8 +7,38 @@
         },
         {
             "label": "2025-11-19_03-11-54",
-            "content": "class Foo:\n    def __init__(self, x: int):\n        self.x = x\n    def __str__(self):\n        return f\"FFoo({self.x})\"\n    \nlista_vazia: list[int] = []\nlista_preenchida: list [int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo]= [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(10)\nlista_preenchida.append(6)\nultimo = lista_preenchida.pop()\nlista_preenchida.insert(0,99)\nprimeiro = lista_preenchida.pop(0)\nlista_preenchida.insert(2, 777)\nremovido = lista_preenchida.pop(2)\npalavras = [\"ola\", \"mundo\", \"python\"]\ntexto_formatado = \" | \".join(palavras)\nn = 5\nsequencia = list(range(n + 1))\nimport random\naleatorios = [random.randint(1, 10) for _ in range(5)]\nprimeiro_elemento = lista_preenchida[0] if len(lista_preenchida) > 0 else None\nfor valor in lista_preenchida:\n    pass\nfor i in range(len(lista_prenchida)):\n    temp = lista_preenchida[i]\n    x = 3\n    achou = False\n    for v in lista_preenchida:\n        if v == x:\n            achou= True\n            break\nexiste = x in lista_preenchida",
+            "content": "@@ -810,25 +810,24 @@\n en(lista_pre\n-e\n nchida)):%0A  \n@@ -1009,436 +1009,4 @@\n hida\n-%0Apares = %5Bv for v in lista_preenchida if v %25 2 ==0%5D%0Adobro = %5Bv * 2 for v in lista_preenchida%5D%0A%0Adef remover_primeira(lista, valor):%0A    for i in range(len(lista)):%0A        if lista%5Bi%5D == valor:%0A            lista.pop(i)%0A            return True%0A        return False%0Adef remover_todos(lista,valor):%0A    i = 0%0A    while i %3C len(lista):%0A        if lista%5Bi%5D == valor:%0A            lista.pop(i)%0A        else:%0A            i += 1%0A            %0A\n",
             "lines": "35"
+        },
+        {
+            "label": "2025-11-19_08-51-45",
+            "content": "@@ -1441,185 +1441,5 @@\n     \n-funcoes_lista= dir(list)%0A%0Adef main ():%0A    if __name__ == %22__name__%22:%0A        print(%22lista vazia:%22, lista_vazia)%0A        print(%22lista preenchida:%22, lista_preenchida_objetos)%0Amain ()\n+%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-19_08-55-33",
+            "content": "@@ -1605,599 +1605,17 @@\n hida\n-)%0A        print(%22lista com objetos:%22, lista_preenchida_objetos)%0A        print(%22ultimo removido%22, ultimo)%0A        print(%22primeiro removido%22, primeiro)%0A        print(%22removido posi%C3%A7ao 2:%22, removido)%0A        print(%22join:%22, texto_formatado)%0A        print(%22sequencia:%22, sequencia)%0A        print(%22aleatorios%22, aleatorios)%0A        print(%22pares:%22, pares)%0A        print(%22dobro%22, dobro)%0A        print(%223 existe na lista?%22, existe)        %0A        teste = %5B1, 2, 3, 4, 2, 4%5D%0A        print(%22%5CnAntes remover primeira vez:%22, teste)%0A        remover_primeira(teste,2)%0A        print(%22Depois%22, teste)%0A        \n+_objetos)\n %0Amai\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-19_09-17-29",
+            "content": "@@ -2055,16 +2055,19 @@\n 1, 2, 3,\n+ 4,\n  2, 4%5D%0A \n@@ -2196,20 +2196,8 @@\n     \n-teste2 = %5B2%5D\n %0Amai\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-19_09-18-51",
+            "content": "@@ -2204,204 +2204,9 @@\n = %5B2\n-, 2, 2, 3%5D%0A        print(%22%5CnAntes remover todos:%22, teste2)%0A        remover_todos(teste2, 2)%0A        print(%22depois:%22 teste2)%0A        print(%22%5CnFun%C3%A7oes nativas de list:%22)%0A        print(funcoes_lista)\n+%5D\n %0Amai\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-19_09-27-40",
+            "content": "@@ -2315,17 +2315,16 @@\n depois:%22\n-,\n  teste2)\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-19_09-27-49",
+            "content": "class Foo:\n    def __init__(self, x: int):\n        self.x = x\n    def __str__(self):\n        return f\"FFoo({self.x})\"\n    \nlista_vazia: list[int] = []\nlista_preenchida: list [int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo]= [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(10)\nlista_preenchida.append(6)\nultimo = lista_preenchida.pop()\nlista_preenchida.insert(0,99)\nprimeiro = lista_preenchida.pop(0)\nlista_preenchida.insert(2, 777)\nremovido = lista_preenchida.pop(2)\npalavras = [\"ola\", \"mundo\", \"python\"]\ntexto_formatado = \" | \".join(palavras)\nn = 5\nsequencia = list(range(n + 1))\nimport random\naleatorios = [random.randint(1, 10) for _ in range(5)]\nprimeiro_elemento = lista_preenchida[0] if len(lista_preenchida) > 0 else None\nfor valor in lista_preenchida:\n    pass\nfor i in range(len(lista_preenchida)):\n    temp = lista_preenchida[i]\n    x = 3\n    achou = False\n    for v in lista_preenchida:\n        if v == x:\n            achou= True\n            break\nexiste = x in lista_preenchida\npares = [v for v in lista_preenchida if v % 2 ==0]\ndobro = [v * 2 for v in lista_preenchida]\n\ndef remover_primeira(lista, valor):\n    for i in range(len(lista)):\n        if lista[i] == valor:\n            lista.pop(i)\n            return True\n        return False\ndef remover_todos(lista,valor):\n    i = 0\n    while i < len(lista):\n        if lista[i] == valor:\n            lista.pop(i)\n        else:\n            i += 1\n            funcoes_lista= dir(list)\n\ndef main ():\n    if __name__ == \"__name__\":\n        print(\"lista vazia:\", lista_vazia)\n        print(\"lista preenchida:\", lista_preenchida)\n        print(\"lista com objetos:\", lista_preenchida_objetos)\n        print(\"ultimo removido\", ultimo)\n        print(\"primeiro removido\", primeiro)\n        print(\"removido posi\u00e7ao 2:\", removido)\n        print(\"join:\", texto_formatado)\n        print(\"sequencia:\", sequencia)\n        print(\"aleatorios\", aleatorios)\n        print(\"pares:\", pares)\n        print(\"dobro\", dobro)\n        print(\"3 existe na lista?\", existe)        \n        teste = [1, 2, 3, 2, 4]\n        print(\"\\nAntes remover primeira vez:\", teste)\n        remover_primeira(teste,2)\n        print(\"Depois\", teste)\n        teste2 = [2, 2, 2, 3]\n        print(\"\\nAntes remover todos:\", teste2)\n        remover_todos(teste2, 2)\n        print(\"depois:\", teste2)\n        print(\"\\nFun\u00e7oes nativas de list:\")\n        print(funcoes_lista)\nmain ()",
+            "lines": "78"
         }
     ]
 }

@@ -12,10 +12,11 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\vivi5\OneDrive\Documentos\poo_cd\poo-dd-cd-bloco-c-Viih-cavalcante\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-19 17:00:11'
+  cache_timestamp: '2025-11-19 20:56:17'
   filters:
   - listas
 expanded:
+- poo@bloco_c-listas
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
@@ -23,6 +24,8 @@ tasks:
     alone:7, study:280}'
   poo@budega: '{rate:100, human:sena_com_a_video_aula_assisti_fiz_e_refiz_um_monte_de_vezes_sempre_q_testava_nao_dava_certo_nada_mas_depois_fiz_uma_revisao_de_todo_o_conteudo_e_consegui_desenrolar,
     guide:sim_aula_do_sena, alone:10, study:450}'
+  poo@pula-pula: '{rate:100, guide:tive_q_ver_o_video_guia_do_readme_se_nao_num_ia_pra_frente_nao,
+    other:pdfs_de_poo_da_minha_irma_do_ifce_do_iguatu, alone:8, study:420}'
   poo@cinema: '{rate:100, other:pdfs_da_minha_irma_q_faz_cc_no_if_do_iguatu, alone:9,
     study:360}'
 flags:

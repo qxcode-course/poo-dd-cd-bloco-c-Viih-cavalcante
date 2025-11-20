@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\vivi5\OneDrive\Documentos\poo_cd\poo-dd-cd-bloco-c-Viih-cavalcante\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-19 20:56:17'
+  cache_timestamp: '2025-11-19 22:45:06'
   filters:
   - listas
 expanded:
@@ -20,12 +20,15 @@ expanded:
 - poo@campanha-principal
 - poo@bloco_c-listas
 tasks:
-  poo@array: '{rate:100, other:li_os_pdf_da_minha_irma_q_faz_cc_no_iguatu_e_ja_teve_poo,
-    alone:7, study:280}'
+  poo@array: '{rate:100, human:minha_irma_me_ajudou_a_internalizar_alguns_conceitos,
+    other:li_os_pdf_da_minha_irma_q_faz_cc_no_iguatu_e_ja_teve_poo, alone:8, study:280}'
   poo@budega: '{rate:100, human:sena_com_a_video_aula_assisti_fiz_e_refiz_um_monte_de_vezes_sempre_q_testava_nao_dava_certo_nada_mas_depois_fiz_uma_revisao_de_todo_o_conteudo_e_consegui_desenrolar,
     guide:sim_aula_do_sena, alone:10, study:450}'
-  poo@pula-pula: '{rate:100, guide:tive_q_ver_o_video_guia_do_readme_se_nao_num_ia_pra_frente_nao,
-    other:pdfs_de_poo_da_minha_irma_do_ifce_do_iguatu, alone:8, study:420}'
+  poo@lapiseira: '{rate:100, guide:peguei_uma_parte_do_codigo_do_bloco_passado_eai_ajustei_muita_coisa,
+    alone:8, study:270}'
+  poo@pula-pula: '{rate:100, iagen:nao_tava_me_tocando_q_a_lista_era_inversa_e_quem_me_acordou_foi_o_gemini,
+    guide:olhei_o_video_guia_do_readme_so_pra_ver_se_tinha_mais_informaao_do_q_oq_tinha_escrito,
+    other:pdfs_de_poo_da_minha_irma_do_ifce_do_iguatu, alone:9, study:420}'
   poo@cinema: '{rate:100, other:pdfs_da_minha_irma_q_faz_cc_no_if_do_iguatu, alone:9,
     study:360}'
 flags:
@@ -35,4 +38,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@pula-pula
+selected: poo@bloco_c-listas

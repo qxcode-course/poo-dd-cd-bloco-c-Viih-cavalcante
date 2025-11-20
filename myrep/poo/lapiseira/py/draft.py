@@ -1,106 +1,129 @@
-class Lead:
-    def __init__(self, thickness: float, hardness: str, size: int):
-        self.__thickness: float = thickness
-        self.__hardness: str = hardness      
-        self.__size: int = size              
-    def getThickness(self) -> float:
-        return self.__thickness
-    def getHardness(self) -> str:
-        return self.__hardness
-    def getSize(self) -> int:
-        return self.__size
-    def setSize(self, size: int):
-        self.__size = size
-    def usagePerSheet(self) -> int:
-        if self.__hardness == "HB":
-            return 1
-        if self.__hardness == "2B":
-            return 2
-        if self.__hardness == "4B":
-            return 4
-        if self.__hardness == "6B":
-            return 6
+class Grafite:
+    def __init__(self, calibre: float, dureza: str, tamanho: int):
+        self.calibre = calibre
+        self.dureza = dureza
+        self.tamanho = tamanho
+
+    def gasto(self):
+        if self.dureza == "HB": return 1
+        if self.dureza == "2B": return 2
+        if self.dureza == "4B": return 4
+        if self.dureza == "6B": return 6
         return 0
-    def __str__(self) -> str:
-        return f"[{self.__thickness}:{self.__hardness}:{self.__size}]"
-class Pencil:
-    def __init__(self, thickness: float):
-        self.__tip: None = None              
-        self.__thickness: float = thickness  
-    def getTip(self) -> Lead | None:
-        return self.__tip
-    def getThickness(self) -> float:
-        return self.__thickness
-    def hasGrafite(self) -> bool:
-        if self.__tip != None:
-            return True
-        else:
-            return False
-    def insert(self, grafite: Lead) -> bool:
-        if self.hasGrafite(): 
-            print("fail: ja existe grafite")
-            return False
-        elif grafite.getThickness() != self.__thickness:
-            print("fail: calibre incompativel")
-            return False
-        self.__tip = grafite
+    
+    def __str__(self):
+        return f"{self.calibre}:{self.dureza}:{self.tamanho}"
+    
+class Lapiseira:
+    def __init__(self, calibre: float):
+        self.calibre = calibre
+        self.bico: Grafite | None = None
+        self.tambor: list[Grafite] = []
+
+    def inserir(self, g: Grafite):
+        if g.calibre != self.calibre:
+                print("fail: calibre incompatível")
+                return False
+        self.tambor.append(g)
         return True
-    def remove(self) -> Lead | None:
-        if not self.hasGrafite():
-            print("fail: nao existe grafite")
-            return None
-        else:
-            Aux: Lead = self.__tip
-            self.__tip = None
-            return Aux
-    def writePage(self):
-        if not self.hasGrafite():
-            print("fail: nao existe grafite")
-            return
-        grafite = self.__tip
-        gasto = grafite.usagePerSheet()
-        tamanho_atual = grafite.getSize()
-        if tamanho_atual <= 10:
-            print("fail: tamanho insuficiente")
-            return 
-        novo_tamanho = tamanho_atual - gasto
-        if novo_tamanho < 10:
-            grafite.setSize(10)
-            print("fail: folha incompleta")
-            return
-        grafite.setSize(novo_tamanho)
-    def __str__(self) -> str:
-        if self.hasGrafite():
-            return f"calibre: {self.__thickness}, grafite: {self.__tip}"
-        else:
-            return f"calibre: {self.__thickness}, grafite: null" 
+    
+    def puxar(self):
+         if self.bico is not None:
+              print("fail: ja existe grafite no bico")
+              return False
+         if len(self.tambor) == 0:
+              print("fail: nao ha grafites no tambor")
+              return False
+         self.bico = self.tambor.pop(0)
+         return True
+    def remover(self):
+         if self.bico is None:
+              print("fail: nao existe grafite no bico")
+              return None
+         self.bico = None
+    def escrever(self):
+         if self.bico is None:
+              print("fail: nao existe grafite no bico")
+              return
+         
+         g = self.bico
+         gasto = g.gasto()
+
+         if g.tamanho <= 10:
+              print("fail: tamanho insuficiente")
+              return
+         
+         novo_tam = g.tamanho - gasto
+         
+         if novo_tam < 10:
+              print("fail: folha incompleta")
+              g.tamanho = 10
+              return
+         
+         g.tamanho = novo_tam
+
+    def __str__(self):
+         if self.bico is None:
+              bico_str = "[]"
+         else:
+              bico_str = f"[{self.bico}]"
+
+         if len(self.tambor) == 0:
+              tambor_str = " <>"
+         else:
+              tambor_str = " <" + "".join(f"[{g}]" for g in self.tambor) + ">"
+
+         return f"calibre: {self.calibre}, bico: {bico_str}, tambor:{tambor_str}"
+
 def main():
-    pencil: Pencil | None = None
-    while True:
-        line: str = input()
-        print("$" + line)
-        args: list[str] = line.split()
-        if args[0] == "show":
-            if pencil != None:
-                print(pencil)
-            else:
-                print("fail: lapiseira nao iniciada")
-        elif args[0] == "end":
-            break
-        elif args[0] == "init":
-            thickness = float(args[1])
-            pencil = Pencil(thickness)
-        elif args[0] == "insert":
-            if pencil is None:
-                print("fail: lapiseira nao iniciada")
-                continue
-            thickness = float(args[1])
-            hardness = args[2]
-            size = int(args[3])
-            grafite = Lead(thickness, hardness, size)
-            pencil.insert(grafite)
-        elif args[0] == "remove":
-            pencil.remove()
-        elif args[0] == "write":
-                  pencil.writePage()
+     lap: Lapiseira |None = None
+
+     while True:
+          line = input()
+          print("$" + line)
+          args = line.split()
+
+          if len(args) == 0:
+               continue
+          if args[0] == "end":
+               break
+          elif args[0] == "init":
+               calibre = float(args[1])
+               lap = Lapiseira(calibre)
+          elif args[0] == "show":
+               if lap is None:
+                    print("fail: lapiseira nao iniciada")
+               else:
+                    print(lap)
+          elif args[0] == "insert":
+               if lap is None:
+                    print("fail: lapiseira nao iniciada")
+                    continue
+               
+               calibre = float(args[1])
+               dureza = args[2]
+               tamanho = int(args[3])
+               g = Grafite(calibre, dureza, tamanho)
+               lap.inserir(g)
+
+          elif args[0] == "pull":
+               if lap is None:
+                    print("fail: lapiseira nao iniciada")
+                    continue
+               lap.puxar()
+          elif args[0] == "remove":
+               if lap is None:
+                    print("fail: lapiseira nao iniciada")
+                    continue
+               lap.remover()
+          elif args[0] == "write":
+               if lap is None:
+                    print("fail: lapiseira nao iniciada")
+                    continue
+               lap.escrever()
+
+          else:
+               print("fail: comando invalido")
+
 main()
+               

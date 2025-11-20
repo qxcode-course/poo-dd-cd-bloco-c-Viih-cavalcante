@@ -177,3 +177,64 @@
 2025-11-19 21:47:38, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:60
 2025-11-19 21:47:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:102
 2025-11-19 21:47:50, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 21:52:35, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-19 21:52:39, EXEC, v:1, k:poo@budega, mode:FULL, rate:100
+2025-11-19 21:52:40, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-19 21:53:02, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 21:53:05, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 21:53:09, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 21:53:16, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-19 21:55:46, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:106
+2025-11-19 22:16:09, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:107
+2025-11-19 22:16:54, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:106
+2025-11-19 22:16:59, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-19 22:17:15, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:106
+2025-11-19 22:20:17, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-19 22:44:34, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:69
+2025-11-19 22:44:36, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 22:44:48, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 22:44:54, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-19 22:44:54, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 23:01:24, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 23:01:26, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:122
+2025-11-19 23:01:36, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-19 23:02:35, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:122
+2025-11-19 23:03:05, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:7, size:122
+2025-11-19 23:03:08, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 23:03:12, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 23:03:19, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:7
+2025-11-19 23:15:03, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:7, size:129
+2025-11-19 23:15:59, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:7, size:129
+2025-11-19 23:16:24, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:7, size:129
+2025-11-19 23:16:36, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:14, size:129
+2025-11-19 23:17:03, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:21, size:129
+2025-11-19 23:20:41, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:21, size:130
+2025-11-19 23:21:26, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:28, size:130
+2025-11-19 23:21:55, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 23:22:02, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 23:22:08, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:28
+2025-11-19 23:23:22, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:28, size:130
+2025-11-19 23:23:41, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:42, size:130
+2025-11-19 23:24:28, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:57, size:130
+2025-11-19 23:24:57, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:85, size:130
+2025-11-19 23:27:46, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:85, size:129
+2025-11-19 23:34:05, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:100, size:129
+2025-11-19 23:34:22, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 23:34:32, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-19 23:34:33, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-19 23:36:26, SELF, v:1, k:poo@lapiseira, rate:100, guide:peguei_uma_parte_do_codigo_do_bloco_passado_eai_ajustei_muita_coisa, alone:8, study:270
+2025-11-19 23:36:36, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-19 23:36:45, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
+2025-11-19 23:37:02, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 23:37:16, SELF, v:1, k:poo@pula-pula, rate:100, guide:tive_q_ver_o_video_guia_do_readme_se_nao_num_ia_pra_frente_nao, other:pdfs_de_poo_da_minha_irma_do_ifce_do_iguatu, alone:9, study:420
+2025-11-19 23:37:34, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-19 23:37:36, EXEC, v:1, k:poo@array, mode:LOCK, rate:100
+2025-11-19 23:37:38, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-19 23:38:27, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-19 23:38:29, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-19 23:39:03, SELF, v:1, k:poo@array, rate:100, human:minha_irma_me_ajudou_a_internalizar_alguns_conceitos, other:li_os_pdf_da_minha_irma_q_faz_cc_no_iguatu_e_ja_teve_poo, alone:8, study:280
+2025-11-19 23:39:21, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-19 23:39:23, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 23:40:35, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-19 23:40:36, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 23:41:31, SELF, v:1, k:poo@pula-pula, rate:100, iagen:nao_tava_me_tocando_q_a_lista_era_inversa_e_quem_me_acordou_foi_o_gemini, guide:olhei_o_video_guia_do_readme_so_pra_ver_se_tinha_mais_informaao_do_q_oq_tinha_escrito, other:pdfs_de_poo_da_minha_irma_do_ifce_do_iguatu, alone:9, study:420
